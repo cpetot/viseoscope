@@ -15,6 +15,7 @@ export class CollaboratorsComponent implements OnInit {
   collaborators : Array<Collaborator> = [];
   selectedCollaborator : Collaborator;
   creation : boolean = false;
+
   /**
   * Variable qui contiendra l'objet observable de la route actuelle
   * Cela permet de ne pas recharger le composant et de le détruire
@@ -47,7 +48,7 @@ export class CollaboratorsComponent implements OnInit {
 
   onCreate() {
     this.creation = true;
-    let id = _collaboratorService.generateCollaboratorID();
+    let id = this._collaboratorService.generateCollaboratorID();
     this.selectedCollaborator = new Collaborator(id, '' , '')
   }
 

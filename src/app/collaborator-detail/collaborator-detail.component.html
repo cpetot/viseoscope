@@ -1,6 +1,5 @@
 
 <div *ngIf="collaborator">
-
   <h2 *ngIf="!creation">Détails de {{collaborator.name}}!</h2>
   <h2 *ngIf="creation">Création d'un nouveau collaborateur</h2>
   <div>
@@ -15,5 +14,5 @@
       <input id="collab-surname" [(ngModel)]="collaborator.surname" placeholder="surname" />
     </div>
   </div>
-  <button *ngIf="creation" (click)="onCreate">Créer</button>
+  <button *ngIf="creation" (click)="onCreate(collaborator)">Créer</button>
 </div>

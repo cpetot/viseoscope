@@ -3,30 +3,29 @@ import { Collaborator } from './collaborator'
 @Injectable()
 export class CollaboratorService {
 
-  private id : number = 2;
+  private id : number = 1;
   constructor() {}
 
   getCollaborators() {
-    return Promise.resolve(COLLABORATORS);
+    return Promise.resolve(this.COLLABORATORS);
   }
 
   getCollaborator(id: number) {
-    return Promise.resolve(COLLABORATORS).then(
+    return Promise.resolve(this.COLLABORATORS).then(
       collaborators => collaborators.filter(collaborator => collaborator.id === id)[0]
     );
   }
 
   generateCollaboratorID() : number {
-    return id;
+    return this.id++;
   }
 
   addCollaborator(collaborator : Collaborator) {
-    COLLABORATORS.push(collaborator);
-    id++;
+    this.COLLABORATORS.push(collaborator);
   }
-}
 
-export var COLLABORATORS : Array<Collaborator> = [
-  new Collaborator(1, 'Petot', 'Claude'),
-  new Collaborator(2, 'Soler', 'Jonathan')
-];
+  private COLLABORATORS : Array<Collaborator> = [
+    new Collaborator(this.generateCollaboratorID(), 'Petot', 'Claude'),
+    new Collaborator(this.generateCollaboratorID(), 'Soler', 'Jonathan')
+  ];
+}

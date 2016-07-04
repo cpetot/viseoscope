@@ -2,6 +2,7 @@
 
 import { By }           from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
+import { CollaboratorService } from '../collaborator.service';
 
 import {
   beforeEach, beforeEachProviders,
@@ -12,9 +13,16 @@ import {
 
 import { CollaboratorDetailComponent } from './collaborator-detail.component';
 
+beforeEachProviders(() => [
+  CollaboratorService
+]);
+
+
 describe('Component: CollaboratorDetail', () => {
-  it('should create an instance', () => {
-    let component = new CollaboratorDetailComponent();
-    expect(component).toBeTruthy();
-  });
+    it('should create an instance',
+    inject([CollaboratorService],(service:CollaboratorService) => {
+
+      let component = new CollaboratorDetailComponent(service);
+      expect(component).toBeTruthy();
+    }));
 });
