@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Collaborator } from '../collaborator';
+import { Router, ActivatedRoute } from '@angular/router';
 import { CollaboratorDetailComponent } from '../collaborator-detail/collaborator-detail.component';
 import { CollaboratorService } from '../collaborator.service'
 
@@ -14,10 +15,29 @@ export class CollaboratorsComponent implements OnInit {
   collaborators : Array<Collaborator> = [];
   selectedCollaborator : Collaborator;
 
-  constructor(private _collaboratorService : CollaboratorService) {}
+  /**
+  * Variable qui contiendra l'objet observable de la route actuelle
+  * Cela permet de ne pas recharger le composant et de le détruire
+  * Si nous changeons juste le paramètre de la page
+  **/
+  private sub : any;
+
+  constructor(private _collaboratorService : CollaboratorService,
+              private _activatedRoute: ActivatedRoute) {}
 
   ngOnInit() {
     this._collaboratorService.getCollaborators().then((collaborators) => this.collaborators = collaborators);
+    this.sub = this._activatedRoute.params.subscribe(params => {
+        let id = +params['id'];
+        this._collaboratorService.getCollaborator(id)
+          .then(collaborator => this.selectedCollaborator = collaborator)
+      });
+  }
+
+  ngOnDestroy() {
+    if (this.sub) {
+      this.sub.unsubscribe();
+    }
   }
 
   onCollaboratorSelected(collaborator : Collaborator) {
