@@ -11,6 +11,7 @@ import {
 } from '@angular/core/testing';
 
 import { CollaboratorsComponent } from './collaborators.component';
+import { Collaborator } from '../collaborator';
 
 describe('Component: Collaborators', () => {
   it('should create an instance', () => {
@@ -21,4 +22,12 @@ describe('Component: Collaborators', () => {
     let component = new CollaboratorsComponent();
     expect(component.collaborators.length).toBe(2);
   });
+  it('should set selected collaborator when onCollaboratorSelected', () => {
+    let component = new CollaboratorsComponent();
+    expect(component.selectedCollaborator).toBeUndefined();
+
+    let collaborator = new Collaborator(1,'Soler','Jonathan');
+    component.onCollaboratorSelected(collaborator);
+    expect(component.selectedCollaborator).toBe(collaborator);
+});
 });

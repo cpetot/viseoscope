@@ -1,0 +1,17 @@
+
+<div *ngIf="collaborator">
+
+  <h2>Détails de {{collaborator.name}}!</h2>
+  <div>
+    <div class= "form-element">
+      <label>Id: </label>{{collaborator.id}}</div>
+    <div class= "form-element">
+      <label for="collab-name">Nom: </label>
+      <input id="collab-name" [(ngModel)]="collaborator.name" placeholder="name" />
+    </div>
+    <div class= "form-element">
+      <label for="collab-surname">Prénom: </label>
+      <input id="collab-surname" [(ngModel)]="collaborator.surname" placeholder="surname" />
+    </div>
+  </div>
+</div>
