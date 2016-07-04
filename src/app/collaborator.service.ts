@@ -3,6 +3,7 @@ import { Collaborator } from './collaborator'
 @Injectable()
 export class CollaboratorService {
 
+  private id : number = 2;
   constructor() {}
 
   getCollaborators() {
@@ -13,6 +14,15 @@ export class CollaboratorService {
     return Promise.resolve(COLLABORATORS).then(
       collaborators => collaborators.filter(collaborator => collaborator.id === id)[0]
     );
+  }
+
+  generateCollaboratorID() : number {
+    return id;
+  }
+
+  addCollaborator(collaborator : Collaborator) {
+    COLLABORATORS.push(collaborator);
+    id++;
   }
 }
 

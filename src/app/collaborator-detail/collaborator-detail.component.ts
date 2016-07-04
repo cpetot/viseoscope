@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Collaborator } from '../collaborator';
+import { CollaboratorService } from '../collaborator.service'
 
 @Component({
   moduleId: module.id,
@@ -9,10 +10,14 @@ import { Collaborator } from '../collaborator';
 })
 export class CollaboratorDetailComponent implements OnInit {
   @Input() collaborator: Collaborator;
+  @Input() creation: boolean = false;
 
-  constructor() {}
+  constructor(private _collaboratorService : CollaboratorService) {}
 
   ngOnInit() {
+  }
 
+  onCreate(collaborator : Collaborator) {
+    this._collaboratorService.addCollaborator(collaborator);
   }
 }

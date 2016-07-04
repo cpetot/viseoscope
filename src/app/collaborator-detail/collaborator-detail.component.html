@@ -1,7 +1,8 @@
 
 <div *ngIf="collaborator">
 
-  <h2>Détails de {{collaborator.name}}!</h2>
+  <h2 *ngIf="!creation">Détails de {{collaborator.name}}!</h2>
+  <h2 *ngIf="creation">Création d'un nouveau collaborateur</h2>
   <div>
     <div class= "form-element">
       <label>Id: </label>{{collaborator.id}}</div>
@@ -14,4 +15,5 @@
       <input id="collab-surname" [(ngModel)]="collaborator.surname" placeholder="surname" />
     </div>
   </div>
+  <button *ngIf="creation" (click)="onCreate">Créer</button>
 </div>

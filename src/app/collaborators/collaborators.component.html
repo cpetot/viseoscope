@@ -5,6 +5,9 @@
       <li *ngFor="let collaborator of collaborators" (click)="onCollaboratorSelected(collaborator)">
         <span class="badge">{{collaborator.id}}</span> {{collaborator.name}}
       </li>
+      <li (click)="onCreate">
+        <span class="badge">+</span> Créer
+      </li>
     </ul>
   </div>
   <viseo-collaborator-detail [collaborator]="selectedCollaborator"></viseo-collaborator-detail>
