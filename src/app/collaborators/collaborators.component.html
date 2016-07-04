@@ -1,0 +1,10 @@
+<div>
+  <h2>Collaborateurs</h2>
+  <div class="inlineDiv">
+    <ul class="collaborators">
+      <li *ngFor="let collaborator of collaborators">
+        <span class="badge">{{collaborator.id}}</span> {{collaborator.name}}
+      </li>
+    </ul>
+  </div>
+</div>
