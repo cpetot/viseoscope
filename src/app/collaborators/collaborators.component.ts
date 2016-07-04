@@ -8,13 +8,14 @@ import { Collaborator } from '../collaborator';
   styleUrls: ['collaborators.component.css']
 })
 export class CollaboratorsComponent implements OnInit {
-  collaborators : Array<Collaborator> = [];
+  collaborators : Array<Collaborator> = [
+    new Collaborator(1, 'Petot', 'Claude'),
+    new Collaborator(2, 'Soler', 'Jonathan')
+  ];
 
   constructor() {}
 
   ngOnInit() {
-    this.collaborators.push(new Collaborator(1, 'Petot', 'Claude'));
-    this.collaborators.push(new Collaborator(2, 'Soler', 'Jonathan'));
-}
+  }
 
 }
