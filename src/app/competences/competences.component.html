@@ -1,0 +1,9 @@
+<h2>Compétences</h2>
+
+<div *ngFor="let competence of collaborator.competences">
+  <label for="type">Type :</label> <input type="text" id="type" [(ngModel)]="competence.type" />
+  <label for="nom">Nom :</label> <input type="text" id="nom" [(ngModel)]="competence.name" />
+</div>
+<label for="type">Type :</label> <input type="text" id="type" [(ngModel)]="newCompetence.type" (keyup.enter)="add(newCompetence)" />
+<label for="nom">Nom :</label> <input type="text" id="nom" [(ngModel)]="newCompetence.name" (keyup.enter)="add(newCompetence)" />
+<button (click)="add(newCompetence)" [disabled]="!newCompetenceCheck()">ajouter</button>

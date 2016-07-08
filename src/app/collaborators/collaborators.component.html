@@ -1,8 +1,10 @@
 <div>
   <h2>Collaborateurs</h2>
   <div class="inlineDiv">
+    <label for="search">Recherche : </label>
+    <input name="search" id="search" [(ngModel)]="searchText" (keyup)="selectedCollaborator=''">
     <ul class="collaborators">
-      <li *ngFor="let collaborator of collaborators" (click)="onCollaboratorSelected(collaborator)">
+      <li *ngFor="let collaborator of collaborators | collaborators:searchText" (click)="onCollaboratorSelected(collaborator)">
         <span class="badge">{{collaborator.id}}</span> {{collaborator.name}}
       </li>
       <li *ngIf="!creation" (click)="onCreate()">

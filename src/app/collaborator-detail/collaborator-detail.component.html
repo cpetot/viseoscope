@@ -13,6 +13,9 @@
       <label for="collab-surname">Prénom: </label>
       <input id="collab-surname" [(ngModel)]="collaborator.surname" placeholder="surname" />
     </div>
+    <div class= "form-element">
+      <viseo-competences [collaborator]="collaborator"></viseo-competences>
+    </div>
   </div>
   <button *ngIf="creation" (click)="onCreate(collaborator)">Créer</button>
 </div>

@@ -3,18 +3,21 @@ import { Collaborator } from '../collaborator';
 import { Router, ActivatedRoute } from '@angular/router';
 import { CollaboratorDetailComponent } from '../collaborator-detail/collaborator-detail.component';
 import { CollaboratorService } from '../collaborator.service'
+import { CollaboratorsPipe } from '../collaborators.pipe'
 
 @Component({
   moduleId: module.id,
   selector: 'viseo-collaborators',
   templateUrl: 'collaborators.component.html',
   styleUrls: ['collaborators.component.css'],
-  directives : [CollaboratorDetailComponent]
+  directives : [CollaboratorDetailComponent],
+  pipes: [CollaboratorsPipe]
 })
 export class CollaboratorsComponent implements OnInit {
   collaborators : Array<Collaborator> = [];
   selectedCollaborator : Collaborator;
   creation : boolean = false;
+  searchText : string = '';
 
   /**
   * Variable qui contiendra l'objet observable de la route actuelle

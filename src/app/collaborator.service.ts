@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Collaborator } from './collaborator'
+import { Competence } from './competence'
+
 @Injectable()
 export class CollaboratorService {
 
@@ -20,6 +22,10 @@ export class CollaboratorService {
 
   addCollaborator(collaborator : Collaborator) {
     this.COLLABORATORS.push(collaborator);
+  }
+
+  addCompetence(collaborator : Collaborator, competence : Competence) {
+    collaborator.addCompetence(competence);
   }
 
   private COLLABORATORS : Array<Collaborator> = [
