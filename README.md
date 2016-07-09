@@ -29,3 +29,20 @@ Run `ng github-pages:deploy` to deploy to Github Pages.
 ## Further help
 
 To get more help on the `angular-cli` use `ng --help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+# Enoncé
+
+L'objectif de cet exercice est de mettre en pratique ce que nous avons vu sur l'ensemble des exercices précédents. Nous verrons en plus la notion de "Pipe". Pour ceci nous allons ajouter la notion de compétences à nos collaborateurs.
+
+1. Créez une classe "Competence" avec deux attributs:
+  1. Type : le type de compétence (ex : Développement)
+  2. Name : le nom de la compétence (ex : Angular)
+2. Développez un test simple de notre nouvelle classe
+3. Ajoutez une méthode "addCompetence(competence : Competence) : Collaborator" dans la classe "Collaborator" qui va ajouter la compétence à la liste des compétences du collaborateurs
+4. Ajoutez une méthode "addCompetence(collaborator : Collaborator, competence : Competence)" au service qui va ajouter la compétence au collaborateur
+5. Créez un composant "Competences" permettant de gérer les compétences d'un collaborateur. Ce composant est très simple, deux champs (type et nom) de la compétence avec la possibilité d'en rajouter avec un bouton. Ce composant prend en attribut un collaborateur.
+6. Il nous reste à intégrer le nouveau composant au composant de modification des collaborateurs.
+7. Nous allons maintenant ajouter une fonction de recherche à notre page de liste des collaborateurs :
+  1. Créez un "pipe" à l'aide d'angular-cli
+  2. Ce filtre doit permettre de filtrer les collaborateurs selon leurs compétences ou leur nom ou leur prénom. Pour ceci, développez une méthode "isMatch(searchText : string)" dans la classe "Collaborator" qui va regarder la présence ou non du texte pour le collaborateur. Il faut ensuite appeler cette méthode dans notre "filtre"
+  3. Ajoutez un champs de texte sur le composant de liste des collaborateurs. Ce dernier filtrera instantanément les collaborateurs disponible
