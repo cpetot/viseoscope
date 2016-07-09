@@ -29,3 +29,13 @@ Run `ng github-pages:deploy` to deploy to Github Pages.
 ## Further help
 
 To get more help on the `angular-cli` use `ng --help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+# Enoncé
+
+L'objectif de cet exercice est de pouvoir créer un nouveau collaborateur. Pour ceci nous allons réutiliser le composant de modification d'un collaborateur.
+
+1. Commencez par créer deux nouvelles méthodes dans le service :
+ 1. **generateCollaboratorID()** : pour générer un id pour le nouveau collaborateur
+ 2. **addCollaborator(collaborator : Collaborator)** : qui ajoute le nouveau collaborateur à la liste des collaborateurs
+2. Ajoutez un attribut "creation" au composant de modification de collaborateurs permettant de savoir dans quel mode nous sommes. Si cet attribut est à 'true' un bouton "créer" s'affiche, ce qui va créer le nouveau collaborateur.
+3. Dans le composant de liste de collaborateur, ajouter un bouton "créer" permettant d'afficher l'écran de création d'un collaborateur
