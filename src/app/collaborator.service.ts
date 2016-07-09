@@ -6,14 +6,12 @@ export class CollaboratorService {
   private id : number = 1;
   constructor() {}
 
-  getCollaborators() {
-    return Promise.resolve(this.COLLABORATORS);
+  getCollaborators() : Array<Collaborator> {
+    return this.COLLABORATORS;
   }
 
-  getCollaborator(id: number) {
-    return Promise.resolve(this.COLLABORATORS).then(
-      collaborators => collaborators.filter(collaborator => collaborator.id === id)[0]
-    );
+  getCollaborator(id: number) : Collaborator {
+    return this.COLLABORATORS.filter(collaborator  => collaborator.id === id)[0];
   }
 
   generateCollaboratorID() : number {

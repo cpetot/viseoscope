@@ -27,11 +27,10 @@ export class CollaboratorsComponent implements OnInit {
               private _activatedRoute: ActivatedRoute) {}
 
   ngOnInit() {
-    this._collaboratorService.getCollaborators().then((collaborators) => this.collaborators = collaborators);
+    this.collaborators = this._collaboratorService.getCollaborators();
     this.sub = this._activatedRoute.params.subscribe(params => {
         let id = +params['id'];
-        this._collaboratorService.getCollaborator(id)
-          .then(collaborator => this.selectedCollaborator = collaborator)
+        this.selectedCollaborator = this._collaboratorService.getCollaborator(id);
       });
   }
 
