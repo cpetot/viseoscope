@@ -29,3 +29,13 @@ Run `ng github-pages:deploy` to deploy to Github Pages.
 ## Further help
 
 To get more help on the `angular-cli` use `ng --help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+#Enoncé
+
+L'objectif de cet exercice est de créer un service avec le framework angular 2.
+
+1. Commencez par créer le service "collaborator" à l'aide d'angular-cli
+2. Développez les méthodes suivantes:
+  1.  **getCollaborators()** : permettant de retourner l'ensemble des collaborateurs (Pour avoir un jeu de données, il vous suffit de créer une variable interne au service contenant un tableau de collaborateurs)
+  2.  **getCollaborator(id: number)** : permettant de retourner le collaborateur ayant pour id le nombre en paramètre
+3. Intégrez l'utilisation de ce service dans notre composant "collaborators" de manière à récupérer les collaborators par le biais du service.
