@@ -29,3 +29,11 @@ Run `ng github-pages:deploy` to deploy to Github Pages.
 ## Further help
 
 To get more help on the `angular-cli` use `ng --help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+# Enoncé
+
+L'objectif de cet exercice est de créer un nouveau composant permettant de modifier les caractéristiques des collaborateurs.
+
+1. Créez un nouveau composant "collaborator-detail" à l'aide de l'outil angular-cli
+2. Faites en sorte que lors du clic sur un collaborateur le composant créé s'affiche
+3. Développez le composant, qui prend en attribut un collaborateur, permettant de modifier le nom et le prénom du collaborateur sélectionné
