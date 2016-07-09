@@ -17,7 +17,7 @@ export class CollaboratorsComponent implements OnInit {
   constructor(private _collaboratorService : CollaboratorService) {}
 
   ngOnInit() {
-    this._collaboratorService.getCollaborators().then((collaborators) => this.collaborators = collaborators);
+    this.collaborators = this._collaboratorService.getCollaborators();
   }
 
   onCollaboratorSelected(collaborator : Collaborator) {
