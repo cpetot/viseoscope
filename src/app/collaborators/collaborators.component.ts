@@ -15,7 +15,7 @@ export class CollaboratorsComponent implements OnInit {
     new Collaborator(2, 'Soler', 'Jonathan')
   ];
   selectedCollaborator : Collaborator;
-  
+
   constructor() {}
 
   ngOnInit() {
