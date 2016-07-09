@@ -5,14 +5,12 @@ export class CollaboratorService {
 
   constructor() {}
 
-  getCollaborators() {
-    return Promise.resolve(COLLABORATORS);
+  getCollaborators() : Array<Collaborator> {
+    return COLLABORATORS;
   }
 
-  getCollaborator(id: number) {
-    return Promise.resolve(COLLABORATORS).then(
-      collaborators => collaborators.filter(collaborator => collaborator.id === id)[0]
-    );
+  getCollaborator(id: number) : Collaborator {
+    return COLLABORATORS.filter(collaborator  => collaborator.id === id)[0];
   }
 }
 

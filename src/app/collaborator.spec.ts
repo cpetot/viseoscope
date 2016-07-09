@@ -9,7 +9,11 @@ import {
 import {Collaborator} from './collaborator';
 
 describe('Collaborator', () => {
-  it('should create an instance', () => {
-    expect(new Collaborator(1, 'foo', 'bar')).toBeTruthy();
+  it('should create an instance with correct parameters', () => {
+    let collab = new Collaborator(1, 'foo', 'bar');
+    expect(collab).toBeTruthy();
+    expect(collab.id).toBe(1);
+    expect(collab.name).toBe('foo');
+    expect(collab.surname).toBe('bar');
   });
 });
