@@ -4,9 +4,6 @@ import { By }           from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import {
-  beforeEach, beforeEachProviders,
-  describe, xdescribe,
-  expect, it, xit,
   async, inject
 } from '@angular/core/testing';
 
@@ -29,5 +26,5 @@ describe('Component: Collaborators', () => {
     let collaborator = new Collaborator(1,'Soler','Jonathan');
     component.onCollaboratorSelected(collaborator);
     expect(component.selectedCollaborator).toBe(collaborator);
-});
+  });
 });
