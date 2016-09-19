@@ -2,19 +2,14 @@
 
 import { By }           from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
-import { CollaboratorService } from '../collaborator.service';
-import { Observable } from 'rxjs/Observable';
-import { Subscriber } from 'rxjs/Subscriber';
 
 import {
-  beforeEach, beforeEachProviders,
-  describe, xdescribe,
-  expect, it, xit,
-  async, inject
+  async, inject, TestBed
 } from '@angular/core/testing';
 
 import { CollaboratorsComponent } from './collaborators.component';
 import { Collaborator } from '../collaborator';
+import { CollaboratorService } from '../collaborator.service';
 import { ActivatedRoute } from '@angular/router';
 
 class MockActivatedRoute {
@@ -26,25 +21,25 @@ class MockActivatedRoute {
   }
 }
 let collaborator;
-
 describe('Component: Collaborators', () => {
 
-  beforeEachProviders(() => [
-    CollaboratorService,
-    {provide: ActivatedRoute, useClass: MockActivatedRoute}
-  ]);
-  beforeEach(() => collaborator = new Collaborator(1, 'foo','bar'));
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      providers: [CollaboratorService,
+      {provide: ActivatedRoute, useClass: MockActivatedRoute}]
+    });
+    collaborator = new Collaborator(1, 'foo','bar');
+  });
 
   it('should create an instance',
   inject([CollaboratorService, ActivatedRoute],(service:CollaboratorService, route : ActivatedRoute) => {
 
-	  let component = new CollaboratorsComponent(service, route);
+    let component = new CollaboratorsComponent(service, route);
     expect(component).toBeTruthy();
   }));
 
   it('should initialise the collaborators with the service when ngOnInit',
   inject([CollaboratorService, ActivatedRoute],(service:CollaboratorService, route : ActivatedRoute) => {
-
     // Given
     spyOn(service, 'getCollaborators').and.returnValue([collaborator]);
 
@@ -60,9 +55,9 @@ describe('Component: Collaborators', () => {
   }));
 
   it('should set selected collaborator when onCollaboratorSelected',
-    inject([CollaboratorService, ActivatedRoute],(service:CollaboratorService, route : ActivatedRoute) => {
+  inject([CollaboratorService, ActivatedRoute],(service:CollaboratorService, route : ActivatedRoute) => {
 
-	  let component = new CollaboratorsComponent(service, route);
+    let component = new CollaboratorsComponent(service, route);
     expect(component.selectedCollaborator).toBeUndefined();
 
     component.onCollaboratorSelected(collaborator);
