@@ -5,11 +5,9 @@ import { CollaboratorDetailComponent } from '../collaborator-detail/collaborator
 import { CollaboratorService } from '../collaborator.service'
 
 @Component({
-  moduleId: module.id,
   selector: 'viseo-collaborators',
   templateUrl: 'collaborators.component.html',
-  styleUrls: ['collaborators.component.css'],
-  directives : [CollaboratorDetailComponent]
+  styleUrls: ['collaborators.component.css']
 })
 export class CollaboratorsComponent implements OnInit {
   collaborators : Array<Collaborator> = [];
@@ -31,7 +29,7 @@ export class CollaboratorsComponent implements OnInit {
     this.sub = this._activatedRoute.params.subscribe(params => {
         let id = +params['id'];
         this.selectedCollaborator = this._collaboratorService.getCollaborator(id);
-      });
+    });
   }
 
   ngOnDestroy() {
@@ -48,7 +46,7 @@ export class CollaboratorsComponent implements OnInit {
   onCreate() {
     this.creation = true;
     let id = this._collaboratorService.generateCollaboratorID();
-    this.selectedCollaborator = new Collaborator(id, '' , '')
+    this.selectedCollaborator = new Collaborator(id, '' , '');
   }
 
 }
