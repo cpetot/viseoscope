@@ -3,22 +3,18 @@ import { Collaborator } from '../collaborator';
 import { Router, ActivatedRoute } from '@angular/router';
 import { CollaboratorDetailComponent } from '../collaborator-detail/collaborator-detail.component';
 import { CollaboratorService } from '../collaborator.service'
-import { CollaboratorsPipe } from '../collaborators.pipe'
 
 @Component({
-  moduleId: module.id,
   selector: 'viseo-collaborators',
   templateUrl: 'collaborators.component.html',
-  styleUrls: ['collaborators.component.css'],
-  directives : [CollaboratorDetailComponent],
-  pipes: [CollaboratorsPipe]
+  styleUrls: ['collaborators.component.css']
 })
 export class CollaboratorsComponent implements OnInit {
   collaborators : Array<Collaborator> = [];
   selectedCollaborator : Collaborator;
   creation : boolean = false;
   searchText : string = '';
-
+  
   /**
   * Variable qui contiendra l'objet observable de la route actuelle
   * Cela permet de ne pas recharger le composant et de le détruire
@@ -34,7 +30,7 @@ export class CollaboratorsComponent implements OnInit {
     this.sub = this._activatedRoute.params.subscribe(params => {
         let id = +params['id'];
         this.selectedCollaborator = this._collaboratorService.getCollaborator(id);
-      });
+    });
   }
 
   ngOnDestroy() {
@@ -51,7 +47,7 @@ export class CollaboratorsComponent implements OnInit {
   onCreate() {
     this.creation = true;
     let id = this._collaboratorService.generateCollaboratorID();
-    this.selectedCollaborator = new Collaborator(id, '' , '')
+    this.selectedCollaborator = new Collaborator(id, '' , '');
   }
 
 }

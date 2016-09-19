@@ -1,49 +1,40 @@
 /* tslint:disable:no-unused-variable */
 
-import { By }           from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
-import { CollaboratorService } from '../collaborator.service';
-
-import {
-  beforeEach, beforeEachProviders,
-  describe, xdescribe,
-  expect, it, xit,
-  async, inject
-} from '@angular/core/testing';
-
+import { TestBed, async, inject } from '@angular/core/testing';
 import { CollaboratorDetailComponent } from './collaborator-detail.component';
+import { CollaboratorService } from '../collaborator.service';
 import { Collaborator } from '../collaborator';
 
-beforeEachProviders(() => [
-  CollaboratorService
-]);
-
-
 describe('Component: CollaboratorDetail', () => {
-    it('should create an instance with creation false',
-    inject([CollaboratorService],(service:CollaboratorService) => {
 
-      let component = new CollaboratorDetailComponent(service);
-      expect(component).toBeTruthy();
-      expect(component.creation).toBe(false);
-    }));
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      providers: [CollaboratorService]
+    });
+  });
 
-    it('should delegate creation to the service when onCreate',
-    inject([CollaboratorService],(service:CollaboratorService) => {
+  it('should create an instance',
+  inject([CollaboratorService],(service:CollaboratorService) => {
+    let component = new CollaboratorDetailComponent(service);
+    expect(component).toBeTruthy();
+  }));
 
-      // Given
-      let component = new CollaboratorDetailComponent(service);
-      component.creation = true;
+  it('should delegate creation to the service when onCreate',
+  inject([CollaboratorService],(service:CollaboratorService) => {
 
-      let collaborator = new Collaborator(1, 'foo', 'bar');
-      spyOn(service, 'addCollaborator');
-      spyOn(component.creationChange, 'emit');
+    // Given
+    let component = new CollaboratorDetailComponent(service);
+    component.creation = true;
 
-      // When
-      component.onCreate(collaborator);
-      expect(service.addCollaborator).toHaveBeenCalledWith(collaborator);
-      expect(component.creation).toBe(false);
-      expect(component.creationChange.emit).toHaveBeenCalledWith(false);
+    let collaborator = new Collaborator(1, 'foo', 'bar');
+    spyOn(service, 'addCollaborator');
+    spyOn(component.creationChange, 'emit');
 
-    }));
+    // When
+    component.onCreate(collaborator);
+    expect(service.addCollaborator).toHaveBeenCalledWith(collaborator);
+    expect(component.creation).toBe(false);
+    expect(component.creationChange.emit).toHaveBeenCalledWith(false);
+
+  }));
 });

@@ -4,7 +4,6 @@ import { Competence } from '../competence';
 import { CollaboratorService } from '../collaborator.service';
 
 @Component({
-  moduleId: module.id,
   selector: 'viseo-competences',
   templateUrl: 'competences.component.html',
   styleUrls: ['competences.component.css']

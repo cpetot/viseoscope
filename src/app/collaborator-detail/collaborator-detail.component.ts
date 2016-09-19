@@ -1,14 +1,11 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Collaborator } from '../collaborator';
 import { CollaboratorService } from '../collaborator.service'
-import { CompetencesComponent } from '../competences/competences.component';
 
 @Component({
-  moduleId: module.id,
   selector: 'viseo-collaborator-detail',
   templateUrl: 'collaborator-detail.component.html',
   styleUrls: ['collaborator-detail.component.css'],
-  directives: [CompetencesComponent]
 })
 export class CollaboratorDetailComponent implements OnInit {
   @Input() collaborator: Collaborator;
