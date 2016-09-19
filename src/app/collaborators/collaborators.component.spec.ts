@@ -2,23 +2,24 @@
 
 import { By }           from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
-import { CollaboratorService } from '../collaborator.service';
 
 import {
-  beforeEach, beforeEachProviders,
-  describe, xdescribe,
-  expect, it, xit,
-  async, inject
+  async, inject, TestBed
 } from '@angular/core/testing';
 
 import { CollaboratorsComponent } from './collaborators.component';
 import { Collaborator } from '../collaborator';
-let collaborator;
+import { CollaboratorService } from '../collaborator.service';
 
+let collaborator;
 describe('Component: Collaborators', () => {
 
-  beforeEachProviders(() => [CollaboratorService]);
-  beforeEach(() => collaborator = new Collaborator(1, 'foo','bar'));
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      providers: [CollaboratorService]
+    });
+    collaborator = new Collaborator(1, 'foo','bar');
+  });
 
   it('should create an instance',
   inject([CollaboratorService],(service:CollaboratorService) => {
