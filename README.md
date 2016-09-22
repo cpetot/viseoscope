@@ -27,7 +27,7 @@ This project was generated with [angular-cli](https://github.com/angular/angular
  * cd node_modules/angular-cli/
  * npm i
 
- # Enoncé
+ ## Enoncé
 
  L'objectif de cet exercice est de mettre en pratique ce que nous avons vu sur l'ensemble des exercices précédents. Nous verrons en plus la notion de "Pipe". Pour ceci nous allons ajouter la notion de compétences à nos collaborateurs.
 
