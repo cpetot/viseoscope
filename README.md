@@ -34,8 +34,8 @@ L'objectif de cet exercice est de pouvoir créer un nouveau collaborateur. Pour 
 1. Commencez par créer deux nouvelles méthodes dans le service :
  1. **generateCollaboratorID()** : pour générer un id pour le nouveau collaborateur
  2. **addCollaborator(collaborator : Collaborator)** : qui ajoute le nouveau collaborateur à la liste des collaborateurs
-2. Ajoutez un attribut "creation" au composant de modification de collaborateurs permettant de savoir dans quel mode nous sommes. Si cet attribut est à 'true' un bouton "créer" s'affiche, ce qui va créer le nouveau collaborateur.
-3. Dans le composant de liste de collaborateur, ajouter un bouton "créer" permettant d'afficher l'écran de création d'un collaborateur
+2. Dans le composant de liste de collaborateur, ajoutez un bouton "créer" permettant d'afficher l'écran de création d'un collaborateur (qui est le même composant que pour la modification)
+3. Ajoutez un attribut "creation" au composant de modification de collaborateurs permettant de savoir dans quel mode nous sommes. Si cet attribut est à 'true' un bouton "créer" s'affiche, ce qui va créer le nouveau collaborateur.
 
 ## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
