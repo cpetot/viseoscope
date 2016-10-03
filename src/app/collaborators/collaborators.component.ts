@@ -4,11 +4,10 @@ import { CollaboratorDetailComponent } from '../collaborator-detail/collaborator
 import { CollaboratorService } from '../collaborator.service'
 
 @Component({
-  moduleId: module.id,
   selector: 'viseo-collaborators',
   templateUrl: 'collaborators.component.html',
   styleUrls: ['collaborators.component.css'],
-  directives : [CollaboratorDetailComponent]
+  providers: [CollaboratorService]
 })
 export class CollaboratorsComponent implements OnInit {
   collaborators : Array<Collaborator> = [];
