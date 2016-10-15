@@ -1,17 +1,15 @@
 /* tslint:disable:no-unused-variable */
 
-import {
-  beforeEach, beforeEachProviders,
-  describe, xdescribe,
-  expect, it, xit,
-  async, inject
-} from '@angular/core/testing';
+import { TestBed, async, inject } from '@angular/core/testing';
 import { CollaboratorService } from './collaborator.service';
 import {Collaborator} from './collaborator';
 
-describe('Collaborator Service', () => {
-  beforeEachProviders(() => [CollaboratorService]);
-
+describe('Service: Collaborator', () => {
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      providers: [CollaboratorService]
+    });
+  });
   it('should inject the service',
       inject([CollaboratorService], (service: CollaboratorService) => {
 
@@ -21,7 +19,7 @@ describe('Collaborator Service', () => {
   it('should return the list of 2 collaborators when getCollaborators',
       inject([CollaboratorService], (service: CollaboratorService) => {
 
-    let collaborators : Array<Collaborator>= service.getCollaborators();
+    let collaborators = service.getCollaborators();
     expect(collaborators).toBeDefined();
     expect(collaborators.length).toBe(2);
   }));
@@ -30,7 +28,7 @@ describe('Collaborator Service', () => {
       inject([CollaboratorService], (service: CollaboratorService) => {
 
     let id = 2;
-    let collaborator : Collaborator = service.getCollaborator(id);
+    let collaborator = service.getCollaborator(id);
     expect(collaborator).toBeDefined();
     expect(collaborator.id).toBe(id);
   }));
@@ -39,7 +37,7 @@ describe('Collaborator Service', () => {
       inject([CollaboratorService], (service: CollaboratorService) => {
 
     let id = 20;
-    let collaborator : Collaborator = service.getCollaborator(id);
+    let collaborator = service.getCollaborator(id);
     expect(collaborator).toBeUndefined();
   }));
 
