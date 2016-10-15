@@ -2,7 +2,6 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Collaborator } from '../collaborator';
 
 @Component({
-  moduleId: module.id,
   selector: 'viseo-collaborator-detail',
   templateUrl: 'collaborator-detail.component.html',
   styleUrls: ['collaborator-detail.component.css']
