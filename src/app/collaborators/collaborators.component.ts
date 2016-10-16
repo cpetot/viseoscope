@@ -1,3 +1,4 @@
+import {CollaboratorService} from "../collaborator.service";
 import { Component, OnInit } from '@angular/core';
 import { Collaborator } from '../collaborator';
 import { CollaboratorDetailComponent } from '../collaborator-detail/collaborator-detail.component';
@@ -6,18 +7,18 @@ import { CollaboratorDetailComponent } from '../collaborator-detail/collaborator
   selector: 'viseo-collaborators',
   templateUrl: 'collaborators.component.html',
   styleUrls: ['collaborators.component.css'],
+  providers: [CollaboratorService]
 })
 export class CollaboratorsComponent implements OnInit {
-  collaborators : Array<Collaborator> = [
-    new Collaborator(1, 'Petot', 'Claude'),
-    new Collaborator(2, 'Soler', 'Jonathan')
-  ];
+
+  collaborators: Array<Collaborator>;
   selectedCollaborator : Collaborator;
 
-  constructor() {}
+  constructor(private _collaboratorService : CollaboratorService) {
+  }
 
   ngOnInit() {
-
+    this.collaborators = this._collaboratorService.getAllCollaborators();
   }
 
   onCollaboratorSelected(collaborator : Collaborator) {
