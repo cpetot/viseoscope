@@ -5,13 +5,11 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { CollaboratorsComponent } from './collaborators/collaborators.component';
-import { CollaboratorDetailComponent } from './collaborator-detail/collaborator-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CollaboratorsComponent,
-    CollaboratorDetailComponent
+    CollaboratorsComponent
   ],
   imports: [
     BrowserModule,
