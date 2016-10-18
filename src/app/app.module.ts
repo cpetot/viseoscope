@@ -6,6 +6,7 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { CollaboratorsComponent } from './collaborators/collaborators.component';
 import { CollaboratorDetailComponent } from './collaborator-detail/collaborator-detail.component';
+import { routing } from './app.route';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { CollaboratorDetailComponent } from './collaborator-detail/collaborator-
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    routing
   ],
   providers: [],
   bootstrap: [AppComponent]
