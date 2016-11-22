@@ -29,14 +29,14 @@ This project was generated with [angular-cli](https://github.com/angular/angular
 
 ## Enoncé
 
-L'objectif de cet exercice est de créer un nouveau composant permettant de modifier les caractéristiques des collaborateurs.
+L'objectif de cet exercice est de permettre d'éditer les informations d'un collaborateur sélectionné.
 
-1. Créez un nouveau composant "collaborator-detail" à l'aide de l'outil angular-cli.
-2. Modifiez le composant de détail pour permettre d'éditer un collaborateur :
-   * le composant doit déclarer un collaborateur,
-   * le template doit permettre de visualiser l'identifiant et de modifier le nom et le prénom.
-3. Modifiez le composant de liste pour qu'au clic on passe le collaborateur au composant de détail.
-4. Quels tests pouvez-vous écrire sur ces composants ?
+1. Au clic sur un collaborateur
+1. Ajoutez au composant de liste de collaborateurs l'édition d'un collaborateur permettant :
+   * l'affichage de l'identifiant
+   * l'édition du nom et du prénom
+3. A la sélection d'un collaborateur de la liste, faites en sorte qu'il soit éditable.
+4. Quel test pouvez-vous écrire sur ce composants ?
 
 ## Development server
 
