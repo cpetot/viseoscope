@@ -1,4 +1,4 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import {Pipe, PipeTransform} from "@angular/core";
 
 @Pipe({
   name: 'collaborators'
@@ -6,7 +6,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class CollaboratorsPipe implements PipeTransform {
 
   // Transform is the new "return function(value, args)" in Angular 1.x
-  transform(value, searchText : String) {
+    transform(value, searchText: string) {
 
     if(value && searchText) {
       return value.filter(collaborator =>  collaborator.isMatch(searchText) );
