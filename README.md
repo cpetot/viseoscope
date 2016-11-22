@@ -32,10 +32,19 @@ This project was generated with [angular-cli](https://github.com/angular/angular
 L'objectif de cet exercice est de pouvoir créer un nouveau collaborateur. Pour ceci nous allons réutiliser le composant de modification d'un collaborateur.
 
 1. Commencez par créer deux nouvelles méthodes dans le service :
- 1. **generateCollaboratorID()** : pour générer un id pour le nouveau collaborateur
- 2. **addCollaborator(collaborator : Collaborator)** : qui ajoute le nouveau collaborateur à la liste des collaborateurs
-2. Dans le composant de liste de collaborateur, ajoutez un bouton "créer" permettant d'afficher l'écran de création d'un collaborateur (qui est le même composant que pour la modification)
-3. Ajoutez un attribut "creation" au composant de modification de collaborateurs permettant de savoir dans quel mode nous sommes. Si cet attribut est à 'true' un bouton "créer" s'affiche, ce qui va créer le nouveau collaborateur.
+ * **generateCollaboratorID()** : pour générer un id pour le nouveau collaborateur
+ * **addCollaborator(collaborator : Collaborator)** : qui ajoute le nouveau collaborateur à la liste des collaborateurs
+
+2. Dans le composant de liste de collaborateur, ajoutez un bouton **"Ajouter"** permettant d'afficher l'écran de création d'un collaborateur (qui est le même composant que pour la modification)
+
+3. Ajoutez un attribut "creation" au composant de détails d'un collaborateur permettant de savoir dans quel mode nous sommes. Si cet attribut est à 'true' un bouton **"Créer"** s'affiche.
+
+4. Cliquer sur ce bouton "Créer" va émettre un évènement demandant au composant parent de :
+ * Créer le nouveau collaborateur en appelant le service
+ * Repasser le mode création à false
+ * Quelle méthode proposez-vous pour émettre cet évènement ?
+
+5. Quels tests pouvez-vous écrire sur ce qui vient d'être fait ?
 
 ## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
