@@ -1,16 +1,10 @@
 /* tslint:disable:no-unused-variable */
 
-import { By }           from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
-
-import {
-  async, inject, TestBed
-} from '@angular/core/testing';
-
-import { CollaboratorsComponent } from './collaborators.component';
-import { Collaborator } from '../collaborator';
-import { CollaboratorService } from '../collaborator.service';
-import { ActivatedRoute } from '@angular/router';
+import {inject, TestBed} from "@angular/core/testing";
+import {CollaboratorsComponent} from "./collaborators.component";
+import {Collaborator} from "../collaborator";
+import {CollaboratorService} from "../collaborator.service";
+import {ActivatedRoute} from "@angular/router";
 
 class MockActivatedRoute {
   params:any;
@@ -63,4 +57,19 @@ describe('Component: Collaborators', () => {
     component.onCollaboratorSelected(collaborator);
     expect(component.selectedCollaborator).toBe(collaborator);
   }));
+
+  it('should delegate creation to the service and set creation to false when createRequest received',
+      inject([CollaboratorService, ActivatedRoute], (service: CollaboratorService, route: ActivatedRoute) => {
+        // Given
+        let component = new CollaboratorsComponent(service, route);
+        component.creation = true;
+        spyOn(service, 'addCollaborator');
+
+        // When
+        component.addCollaborator(collaborator);
+
+        // Then
+        expect(service.addCollaborator).toHaveBeenCalledWith(collaborator);
+        expect(component.creation).toBe(false);
+      }));
 });

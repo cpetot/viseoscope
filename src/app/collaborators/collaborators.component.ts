@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { Collaborator } from '../collaborator';
-import { Router, ActivatedRoute } from '@angular/router';
-import { CollaboratorDetailComponent } from '../collaborator-detail/collaborator-detail.component';
-import { CollaboratorService } from '../collaborator.service'
+import {Component, OnInit} from "@angular/core";
+import {Collaborator} from "../collaborator";
+import {ActivatedRoute} from "@angular/router";
+import {CollaboratorService} from "../collaborator.service";
 
 @Component({
   selector: 'viseo-collaborators',
@@ -50,4 +49,8 @@ export class CollaboratorsComponent implements OnInit {
     this.selectedCollaborator = new Collaborator(id, '' , '');
   }
 
+  addCollaborator(collaborator: Collaborator) {
+    this._collaboratorService.addCollaborator(collaborator);
+    this.creation = false;
+  }
 }
