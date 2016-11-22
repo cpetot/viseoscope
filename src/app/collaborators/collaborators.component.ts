@@ -1,27 +1,27 @@
-import { Component, OnInit } from '@angular/core';
-import { Collaborator } from '../collaborator';
-import { CollaboratorDetailComponent } from '../collaborator-detail/collaborator-detail.component';
+import {Component, OnInit} from "@angular/core";
+import {Collaborator} from "../collaborator";
 
 @Component({
-  selector: 'viseo-collaborators',
-  templateUrl: 'collaborators.component.html',
-  styleUrls: ['collaborators.component.css'],
+    selector: 'viseo-collaborators',
+    templateUrl: 'collaborators.component.html',
+    styleUrls: ['collaborators.component.css'],
 })
 export class CollaboratorsComponent implements OnInit {
-  collaborators : Array<Collaborator> = [
-    new Collaborator(1, 'Petot', 'Claude'),
-    new Collaborator(2, 'Soler', 'Jonathan')
-  ];
-  selectedCollaborator : Collaborator;
+    collaborators: Array<Collaborator> = [
+        new Collaborator(1, 'Petot', 'Claude'),
+        new Collaborator(2, 'Soler', 'Jonathan')
+    ];
+    selectedCollaborator: Collaborator;
 
-  constructor() {}
+    constructor() {
+    }
 
-  ngOnInit() {
+    ngOnInit() {
 
-  }
+    }
 
-  onCollaboratorSelected(collaborator : Collaborator) {
-    this.selectedCollaborator = collaborator;
-  }
+    onCollaboratorSelected(collaborator: Collaborator) {
+        this.selectedCollaborator = collaborator;
+    }
 
 }

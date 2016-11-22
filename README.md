@@ -29,13 +29,11 @@ This project was generated with [angular-cli](https://github.com/angular/angular
 
 ## Enoncé
 
- L'objectif de cet exercice est de créer un service avec le framework angular 2.
-
- 1. Commencez par créer le service "collaborator" à l'aide d'angular-cli
- 2. Développez les méthodes suivantes:
-   1.  **getCollaborators()** : permettant de retourner l'ensemble des collaborateurs (Pour avoir un jeu de données, il vous suffit de créer une variable interne au service contenant un tableau de collaborateurs)
-   2.  **getCollaborator(id: number)** : permettant de retourner le collaborateur ayant pour id le nombre en paramètre
- 3. Intégrez l'utilisation de ce service dans notre composant "collaborators" de manière à récupérer les collaborators par le biais du service.
+ L'objectif de cet exercice est de pouvoir réutiliser l'édition d'un collaborateur à plusieurs endroits et de mieux découper le code.
+ 1. Créez un nouveau composant "collaborator-detail" à l'aide de l'outil angular-cli.
+ 2. Modifiez le composant de détail et refactorez le code de l'exercice précédent :
+   * le composant doit déclarer un collaborateur,
+   * le clic sur la liste doit maintenant affecter le collaborateur du composant de détail. Comment faire ceci ?
 
 ## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.

@@ -1,11 +1,27 @@
 <div>
-  <h2>Collaborateurs</h2>
-  <div class="inlineDiv">
-    <ul class="collaborators">
-      <li *ngFor="let collaborator of collaborators" (click)="onCollaboratorSelected(collaborator)">
-        <span class="badge">{{collaborator.id}}</span> {{collaborator.name}}
-      </li>
-    </ul>
-  </div>
-  <viseo-collaborator-detail [collaborator]="selectedCollaborator"></viseo-collaborator-detail>
+	<h2>Collaborateurs</h2>
+	<div class="inlineDiv">
+		<ul class="collaborators">
+			<li *ngFor="let collaborator of collaborators" (click)="onCollaboratorSelected(collaborator)">
+				<span class="badge">{{collaborator.id}}</span> {{collaborator.name}}
+			</li>
+		</ul>
+	</div>
+	<div *ngIf="selectedCollaborator">
+
+		<h2>Détails de {{selectedCollaborator.name}}!</h2>
+		<div>
+			<div class="form-element">
+				<label>Id: </label>{{selectedCollaborator.id}}
+			</div>
+			<div class="form-element">
+				<label for="collab-name">Nom: </label>
+				<input id="collab-name" [(ngModel)]="selectedCollaborator.name" placeholder="name"/>
+			</div>
+			<div class="form-element">
+				<label for="collab-surname">Prénom: </label>
+				<input id="collab-surname" [(ngModel)]="selectedCollaborator.surname" placeholder="surname"/>
+			</div>
+		</div>
+	</div>
 </div>
