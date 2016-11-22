@@ -1,14 +1,17 @@
 <div>
-  <h2>Collaborateurs</h2>
-  <div class="inlineDiv">
-    <ul class="collaborators">
-      <li *ngFor="let collaborator of collaborators" (click)="onCollaboratorSelected(collaborator)">
-        <span class="badge">{{collaborator.id}}</span> {{collaborator.name}}
-      </li>
-      <li *ngIf="!creation" (click)="onCreate()">
-        <span class="badge">+</span> Créer
-      </li>
-    </ul>
-  </div>
-  <viseo-collaborator-detail [collaborator]="selectedCollaborator" [(creation)]="creation"></viseo-collaborator-detail>
+	<h2>Collaborateurs</h2>
+	<div class="inlineDiv">
+		<ul class="collaborators">
+			<li *ngFor="let collaborator of collaborators" (click)="onCollaboratorSelected(collaborator)">
+				<span class="badge">{{collaborator.id}}</span> {{collaborator.name}}
+			</li>
+			<li *ngIf="!creation" (click)="onCreate()">
+				<span class="badge">+</span> Créer
+			</li>
+		</ul>
+	</div>
+	<viseo-collaborator-detail [collaborator]="selectedCollaborator"
+							   [creation]="creation"
+							   (createRequest)="addCollaborator($event)">
+	</viseo-collaborator-detail>
 </div>
