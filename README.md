@@ -31,12 +31,11 @@ This project was generated with [angular-cli](https://github.com/angular/angular
 
 L'objectif de cet exercice est de permettre d'éditer les informations d'un collaborateur sélectionné.
 
-1. Au clic sur un collaborateur
 1. Ajoutez au composant de liste de collaborateurs l'édition d'un collaborateur permettant :
    * l'affichage de l'identifiant
    * l'édition du nom et du prénom
-3. A la sélection d'un collaborateur de la liste, faites en sorte qu'il soit éditable.
-4. Quel test pouvez-vous écrire sur ce composants ?
+2. A la sélection d'un collaborateur de la liste, faites en sorte qu'il soit éditable.
+3. Quel test pouvez-vous écrire sur ce composants ?
 
 ## Development server
 
