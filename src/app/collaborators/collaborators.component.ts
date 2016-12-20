@@ -5,8 +5,8 @@ import {CollaboratorService} from "../collaborator.service";
 
 @Component({
   selector: 'viseo-collaborators',
-  templateUrl: 'collaborators.component.html',
-  styleUrls: ['collaborators.component.css']
+  templateUrl: './collaborators.component.html',
+  styleUrls: ['./collaborators.component.css']
 })
 export class CollaboratorsComponent implements OnInit {
   collaborators : Array<Collaborator> = [];

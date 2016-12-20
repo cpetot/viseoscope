@@ -1,24 +1,24 @@
-import { Component, Input, OnChanges, SimpleChange } from '@angular/core';
-import { Collaborator } from '../collaborator';
-import { Competence } from '../competence';
-import { CollaboratorService } from '../collaborator.service';
+import {Component, Input, SimpleChange} from "@angular/core";
+import {Collaborator} from "../collaborator";
+import {Competence} from "../competence";
+import {CollaboratorService} from "../collaborator.service";
 
 @Component({
   selector: 'viseo-competences',
-  templateUrl: 'competences.component.html',
-  styleUrls: ['competences.component.css']
+  templateUrl: './competences.component.html',
+  styleUrls: ['./competences.component.css']
 })
 export class CompetencesComponent {
   @Input() collaborator: Collaborator;
 
-  newCompetence : Competence = new Competence();
+  newCompetence: Competence = new Competence();
 
-  constructor(private _collaboratorService : CollaboratorService) {
+  constructor(private _collaboratorService: CollaboratorService) {
   }
 
   //Ajoute la compétence au collaborator
-  add(competence : Competence) {
-    if(this.newCompetenceCheck()) {
+  add(competence: Competence) {
+    if (this.newCompetenceCheck()) {
       this._collaboratorService.addCompetence(this.collaborator, competence);
       this.newCompetence = new Competence();
     }
@@ -31,7 +31,7 @@ export class CompetencesComponent {
   }
 
   //gère l'activation du bouton d'ajout de compétence selon certains critères
-  newCompetenceCheck(){
-    return this.newCompetence.type.trim().length>0 && this.newCompetence.name.trim().length>0;
+  newCompetenceCheck() {
+    return this.newCompetence.type.trim().length > 0 && this.newCompetence.name.trim().length > 0;
   }
 }
