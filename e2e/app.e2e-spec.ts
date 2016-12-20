@@ -1,6 +1,6 @@
-import { ViseoscopePage } from './app.po';
+import {ViseoscopePage} from "./app.po";
 
-describe('viseoscope App', function() {
+describe('viseoscope App', function () {
   let page: ViseoscopePage;
 
   beforeEach(() => {
@@ -9,6 +9,6 @@ describe('viseoscope App', function() {
 
   it('should display message saying app works', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('app works!');
+    expect(page.getParagraphText()).toEqual('Viseo Scope!');
   });
 });
