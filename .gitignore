@@ -11,8 +11,10 @@
 # IDEs and editors
 /.idea
 *.iml
+/.vscode
 .project
 .classpath
+.c9/
 *.launch
 .settings/
 
@@ -32,3 +34,6 @@ testem.log
 #System Files
 .DS_Store
 Thumbs.db
+
+# git
+*.orig
